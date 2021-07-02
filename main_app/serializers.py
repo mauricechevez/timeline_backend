@@ -55,7 +55,7 @@ class EntrySerializer(serializers.ModelSerializer):
     )
     timeline = serializers.SlugRelatedField(
         many=False,
-        read_only=True,
+        queryset=Timeline.objects.all(),
         slug_field='title'
     )
     class Meta:
